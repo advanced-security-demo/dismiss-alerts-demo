@@ -77,6 +77,10 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
         
+    - name: Test 
+      run: "echo ${{ steps.analyze.outputs.sarif-id }}"
+        
+        
     - name: Dismiss alerts
       if: github.ref == 'refs/heads/main'
       uses: advanced-security/dismiss-alerts@v1
