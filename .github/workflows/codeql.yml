@@ -77,7 +77,7 @@ jobs:
         category: "/language:${{matrix.language}}"
         
     - name: Dismiss alerts
-      if: github.ref == 'main'
+      if: github.ref == 'refs/heads/main'
       uses: advanced-security/dismiss-alerts@v1
       with:
         # specify a 'sarif-id' and 'sarif-file'
