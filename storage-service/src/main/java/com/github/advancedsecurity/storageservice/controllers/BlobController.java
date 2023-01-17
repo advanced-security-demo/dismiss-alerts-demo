@@ -42,6 +42,7 @@ public class BlobController {
 
     private Blob deserializeBlob(InputStream inputStream) throws IOException, ClassNotFoundException{
         ObjectInputStream in = new ObjectInputStream(inputStream);
+        //codeql[java/unsafe-deserialization]
         Blob b = (Blob)in.readObject();
         in.close();
         return b;
